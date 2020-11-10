@@ -41,7 +41,7 @@ body {
 }
 
 .cover-container {
-	position: absolute;
+  position: absolute;
 }
 
 
@@ -50,10 +50,14 @@ body {
  */
 .masthead {
   margin-bottom: 2rem;
+  background-color: #007bff;
+  padding: 20px;
+  padding-top: 30px;
 }
 
 .masthead-brand {
   margin-bottom: 0;
+  color: white;
 }
 
 .nav-masthead .nav-link {
@@ -91,21 +95,67 @@ body {
 /*
  * Cover
  */
+ 
 .cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-primary {
   padding: .75rem 1.25rem;
   font-weight: 700;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  align-self: center;
+  bottom: 5%;
 }
-
+/*
 .map{
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
 }
 
+.collapse{
+  margin-top: 20px;
+}
+
+*/
 
 /*
  * Footer
  */
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+/*
+ * Map 1np
+ */
+
+ .cls-1 {
+  fill: #00b1f4;
+}
+
+.cls-1, .cls-2, .cls-3 {
+  fill-rule: evenodd;
+}
+
+.cls-2 {
+  fill: #d0d0d0;
+}
+
+.cls-3 {
+  fill: #fff;
+}
+
+/*
+ * Map div
+ */
+
+.mapdiv{
+  width: 100%;
+  max-width: 600px;
+  background-image: url(/img/1np/1np.jpg);
+  background-size: cover;
+}
+
+.mapdiv :hover{
+  fill: rgba(0, 0, 0, .5);
 }
