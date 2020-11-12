@@ -1,6 +1,4 @@
-/*
- * Globals
- */
+/* Globals */
 
 /* Links */
 a,
@@ -20,9 +18,7 @@ a:hover {
 }
 
 
-/*
- * Base structure
- */
+/* Base structure */
 
 html,
 body {
@@ -45,12 +41,10 @@ body {
 }
 
 
-/*
- * Header
- */
+/* Header */
 .masthead {
   margin-bottom: 2rem;
-  background-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.75);
   padding: 20px;
   padding-top: 30px;
 }
@@ -92,9 +86,7 @@ body {
 }
 
 
-/*
- * Cover
- */
+/* Cover */
  
 .cover {
   padding: .75rem 1.25rem;
@@ -105,29 +97,13 @@ body {
   align-self: center;
   bottom: 5%;
 }
-/*
-.map{
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-}
 
-.collapse{
-  margin-top: 20px;
-}
-
-*/
-
-/*
- * Footer
- */
+/* Footer */
 .mastfoot {
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .8);
 }
 
-/*
- * Map 1np
- */
+/* Map 1np */
 
  .cls-1 {
   fill: #00b1f4;
@@ -150,8 +126,6 @@ body {
  */
 
 .mapdiv{
-  width: 100%;
-  max-width: 600px;
   background-image: url(/img/1np/1np.jpg);
   background-size: cover;
 }

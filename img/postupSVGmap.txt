@@ -1,0 +1,11 @@
+Postup tvorby SVG mapy:
+
+výběr místnost pomocí nástroje magicWand
+PTM na výběr - vytvořit pracovní cestu
+vrstva - nová vrstva výplně - plná barva
+skupina z vrstev
+vyber vrstvy a dej exportovat jako .. SVG
+
+z SVG souboru odstranit transforms a mezery
+
+

@@ -1,4 +1,4 @@
-var camera, renderer, scene, cube, geometry, plane, container, material, width, height, aspect;
+var camera, renderer, scene, cube, geometry, plane, container, material, panoImg, width, height, aspect;
 
 var isUserInteracting = false,
     onPointerDownMouseX = 0,
@@ -73,6 +73,37 @@ function init() {
     createObjects();
     createRenderer();
     animate();
+}
+
+/*
+Change the background image
+*/
+function changePanoImg(room){
+    //console.log("room: "+room)
+    switch (room) {
+        case 33:
+            mesh.material.map.image.src = ('img/1np/relax.jpg')
+            break;
+        case 34:
+            mesh.material.map.image.src = ('img/1np/vstupniHala.jpg')
+            break;
+        case 0:
+            mesh.material.map.image.src = ('img/1np/vchod.jpg')
+            break;
+        
+        default:
+            alert(room + " clicked")
+            if(room<=15){
+                mesh.material.map.image.src = ('img/2np/J'+room+'.jpg');
+            }else if(room>15&&room<=25){
+                mesh.material.map.image.src = ('img/3np/J'+room+'.jpg');
+            }else{
+                mesh.material.map.image.src = ('img/4np/J'+room+'.jpg');
+            }
+            break;
+    }
+    mesh.material.map.needsUpdate = true;
+    $("#exampleModal").modal("hide");
 }
 
 window.addEventListener('resize', onWindowResize, false);
