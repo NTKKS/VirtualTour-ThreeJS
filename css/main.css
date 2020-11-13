@@ -85,7 +85,6 @@ body {
   }
 }
 
-
 /* Cover */
  
 .cover {
@@ -132,4 +131,10 @@ body {
 
 .mapdiv :hover{
   fill: rgba(0, 0, 0, .5);
+}
+
+@media (max-width: 600px){
+  .cover{
+    bottom: 10%;
+  }
 }
