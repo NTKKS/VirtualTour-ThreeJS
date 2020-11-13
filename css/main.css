@@ -125,7 +125,7 @@ body {
  */
 
 .mapdiv{
-  background-image: url(/img/1np/1np.jpg);
+  background-image: url('../img/1np/1np.jpg');
   background-size: cover;
 }
 
