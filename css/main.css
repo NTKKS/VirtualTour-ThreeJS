@@ -97,6 +97,16 @@ body {
   bottom: 5%;
 }
 
+.modal-footer{
+  justify-content: center;
+  margin: auto;
+}
+
+button.btn-primary{
+  min-width: 100px;
+  min-height: 38px;
+}
+
 /* Footer */
 .mastfoot {
   color: rgba(255, 255, 255, .8);
@@ -136,5 +146,8 @@ body {
 @media (max-width: 600px){
   .cover{
     bottom: 10%;
+  }
+  button.btn-primary{
+    min-width: 60px;
   }
 }
