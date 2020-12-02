@@ -17,7 +17,7 @@ function createCamera() {
     width = window.innerWidth;
     height = window.innerHeight;
     aspect = width / height;
-    const fov = 75; // Field of View
+    const fov = 90; // Field of View
     const near = 1; // the near clipping plane
     const far = 1100; // the far clipping plane
 
@@ -38,7 +38,7 @@ function createObjects() {
     // invert the geometry on the x-axis so that all of the faces point inward
     geometry.scale(-1, 1, 1);
 
-    var texture = new THREE.TextureLoader().load('img/koleje.jpg');
+    var texture = new THREE.TextureLoader().load('img/1NP/vchod.jpg');
     var material = new THREE.MeshBasicMaterial({
         map: texture
     });
@@ -92,7 +92,7 @@ function changePanoImg(room){
             break;
         
         default:
-            alert(room + " clicked")
+            //alert(room + " clicked")
             if(room<=15){
                 mesh.material.map.image.src = ('img/2np/J'+room+'.jpg');
             }else if(room>15&&room<=25){
@@ -104,6 +104,10 @@ function changePanoImg(room){
     }
     mesh.material.map.needsUpdate = true;
     $("#exampleModal").modal("hide");
+    lon = 0;
+    isUserInteracting = false;
+    camera.fov = 90;
+    camera.updateProjectionMatrix();
 }
 
 window.addEventListener('resize', onWindowResize, false);
@@ -147,7 +151,8 @@ function onPointerUp() {
 
     if (event.isPrimary === false) return;
 
-    isUserInteracting = false;
+    // stop rotation after interaction
+    isUserInteracting = true;
 
     document.removeEventListener('pointermove', onPointerMove);
     document.removeEventListener('pointerup', onPointerUp);
@@ -155,6 +160,9 @@ function onPointerUp() {
 }
 
 function onDocumentMouseWheel(event) {
+
+    // stop rotation after interaction
+    isUserInteracting = true;
 
     var fov = camera.fov + event.deltaY * 0.05;
 
