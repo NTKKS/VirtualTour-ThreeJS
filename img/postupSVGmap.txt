@@ -9,3 +9,5 @@ vyber vrstvy a dej exportovat jako .. SVG
 z SVG souboru odstranit transforms a mezery
 
 
+3508
+4961

@@ -78,35 +78,106 @@ function init() {
 /*
 Change the background image
 */
-function changePanoImg(room){
+function changePanoImg(room) {
     //console.log("room: "+room)
     switch (room) {
+        case 0:
+            mesh.material.map.image.src = ('img/1np/vchod.jpg')
+            break;
         case 33:
             mesh.material.map.image.src = ('img/1np/relax.jpg')
             break;
         case 34:
             mesh.material.map.image.src = ('img/1np/vstupniHala.jpg')
             break;
-        case 0:
-            mesh.material.map.image.src = ('img/1np/vchod.jpg')
+        case 35:
+            mesh.material.map.image.src = ('img/1np/Satna1NP.jpg')
             break;
-        
+        case 36:
+            mesh.material.map.image.src = ('img/1np/StudijniOddeleni.jpg')
+            break;
+        case 37:
+            mesh.material.map.image.src = ('img/2np/CopyIDV.jpg')
+            break;
+        case 38:
+            mesh.material.map.image.src = ('img/2np/hala2NP.jpg')
+            break;
+        case 39:
+            mesh.material.map.image.src = ('img/2np/chodba2NP.jpg')
+            break;
+        case 40:
+            mesh.material.map.image.src = ('img/2np/RelaxJ4.jpg')
+            break;
+        case 41:
+            mesh.material.map.image.src = ('img/2np/RelaxJ7.jpg')
+            break;
+        case 42:
+            mesh.material.map.image.src = ('img/2np/RelaxJ10.jpg')
+            break;
+        case 43:
+            mesh.material.map.image.src = ('img/2np/RelaxJ14.jpg')
+            break;
+        case 44:
+            mesh.material.map.image.src = ('img/2np/Satna2NP.jpg')
+            break;
+        case 45:
+            mesh.material.map.image.src = ('img/2np/SchodisteL2NP.jpg')
+            break;
+        case 46:
+            mesh.material.map.image.src = ('img/2np/SchodisteP2NP.jpg')
+            break;
+        case 47:
+            mesh.material.map.image.src = ('img/2np/vstupA.jpg')
+            break;
+        case 48:
+            mesh.material.map.image.src = ('img/2np/vstupS.jpg')
+            break;
+        case 49:
+            mesh.material.map.image.src = ('img/3np/RelaxJ20.jpg')
+            break;
+        case 50:
+            mesh.material.map.image.src = ('img/3np/RelaxJ24.jpg')
+            break;
+        case 51:
+            mesh.material.map.image.src = ('img/3np/SchodisteL3NP.jpg')
+            break;
+        case 52:
+            mesh.material.map.image.src = ('img/3np/SchodisteP3NP.jpg')
+            break;
+        case 53:
+            mesh.material.map.image.src = ('img/3np/plosina.jpg')
+            break;
+        case 54:
+            mesh.material.map.image.src = ('img/4np/RelaxJ30.jpg')
+            break;
+        case 55:
+            mesh.material.map.image.src = ('img/4np/RelaxJ31.jpg')
+            break;
+        case 56:
+            mesh.material.map.image.src = ('img/4np/SchodisteL4NP.jpg')
+            break;
+        case 57:
+            mesh.material.map.image.src = ('img/4np/SchodisteP4NP.jpg')
+            break;
+
+
         default:
             //alert(room + " clicked")
-            if(room<=15){
-                mesh.material.map.image.src = ('img/2np/J'+room+'.jpg');
-            }else if(room>15&&room<=25){
-                mesh.material.map.image.src = ('img/3np/J'+room+'.jpg');
-            }else{
-                mesh.material.map.image.src = ('img/4np/J'+room+'.jpg');
+            if (room <= 15) {
+                mesh.material.map.image.src = ('img/2np/J' + room + '.jpg');
+            } else if (room > 15 && room <= 25) {
+                mesh.material.map.image.src = ('img/3np/J' + room + '.jpg');
+            } else {
+                mesh.material.map.image.src = ('img/4np/J' + room + '.jpg');
             }
             break;
     }
+    console.log(mesh.material.map.image.src)
     mesh.material.map.needsUpdate = true;
     $("#exampleModal").modal("hide");
     lon = 0;
     isUserInteracting = false;
-    camera.fov = 90;
+    camera.fov = 85;
     camera.updateProjectionMatrix();
 }
 
@@ -142,8 +213,8 @@ function onPointerMove(event) {
 
     if (event.isPrimary === false) return;
 
-    lon = (onPointerDownMouseX - event.clientX) * 0.1 + onPointerDownLon;
-    lat = (event.clientY - onPointerDownMouseY) * 0.1 + onPointerDownLat;
+    lon = (onPointerDownMouseX - event.clientX) * 0.2 + onPointerDownLon;
+    lat = (event.clientY - onPointerDownMouseY) * 0.2 + onPointerDownLat;
 
 }
 
