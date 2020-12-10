@@ -78,7 +78,7 @@ function createRenderer() {
     //document.body.appendChild(renderer.domElement);
     container.appendChild(renderer.domElement);
 
-    //container.style.touchAction = 'none';
+    container.style.touchAction = 'none';
     container.addEventListener('pointerdown', onPointerDown, false);
 
     document.addEventListener('wheel', onDocumentMouseWheel, false);
