@@ -12,7 +12,8 @@ a:hover {
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
   background-color: #fff;
   border: .05rem solid #fff;
 }
@@ -23,7 +24,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #00b1f4;
   margin: 0;
   overflow: hidden;
 }
@@ -67,7 +68,7 @@ body {
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
-.nav-masthead .nav-link + .nav-link {
+.nav-masthead .nav-link+.nav-link {
   margin-left: 1rem;
 }
 
@@ -80,13 +81,14 @@ body {
   .masthead-brand {
     float: left;
   }
+
   .nav-masthead {
     float: right;
   }
 }
 
 /* Cover */
- 
+
 .cover {
   padding: .75rem 1.25rem;
   font-weight: 700;
@@ -97,12 +99,12 @@ body {
   bottom: 5%;
 }
 
-.modal-footer{
+.modal-footer {
   justify-content: center;
   margin: auto;
 }
 
-button.btn-primary{
+button.btn-primary {
   min-width: 100px;
   min-height: 38px;
 }
@@ -114,11 +116,13 @@ button.btn-primary{
 
 /* Map 1np */
 
- .cls-1 {
+.cls-1 {
   fill: #00b1f4;
 }
 
-.cls-1, .cls-2, .cls-3 {
+.cls-1,
+.cls-2,
+.cls-3 {
   fill-rule: evenodd;
 }
 
@@ -130,7 +134,7 @@ button.btn-primary{
   fill: #fff;
 }
 
-path{
+path {
   fill: #007bff;
   stroke: #005879;
   stroke-width: 5px;
@@ -141,20 +145,39 @@ path{
  * Map div
  */
 
-.mapdiv{
+.mapdiv {
   background-image: url('../img/1np/1np.jpg');
   background-size: cover;
 }
 
-.mapdiv :hover{
+.mapdiv :hover {
   fill: rgba(0, 0, 0, .25);
 }
 
-@media (max-width: 600px){
-  .cover{
+@media (max-width: 600px) {
+  .cover {
     bottom: 10%;
   }
-  button.btn-primary{
+
+  button.btn-primary {
     min-width: 60px;
   }
+}
+
+
+#loading-screen {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  opacity: 1;
+  transition: 1s opacity;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
 }

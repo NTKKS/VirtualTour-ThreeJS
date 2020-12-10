@@ -10,7 +10,10 @@ var isUserInteracting = false,
     phi = 0,
     theta = 0;
 
-init();
+var panoImg = ('img/1NP/vchod.jpg');
+var spinner = document.getElementById('spinner');
+
+init(panoImg);
 
 function createCamera() {
     // Create a Camera
@@ -33,12 +36,28 @@ function createCamera() {
     scene.add(light);
 } */
 
-function createObjects() {
+function createObjects(panoImg) {
+
+    const loadingManager = new THREE.LoadingManager(() => {
+
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.classList.add('fade-out');
+
+        lon = 0;
+        isUserInteracting = false;
+        camera.fov = 85;
+        camera.updateProjectionMatrix();
+
+        // optional: remove loader from DOM via event listener
+        loadingScreen.addEventListener('transitionend', onTransitionEnd);
+
+    });
+
     geometry = new THREE.SphereBufferGeometry(500, 60, 40);
     // invert the geometry on the x-axis so that all of the faces point inward
     geometry.scale(-1, 1, 1);
-
-    var texture = new THREE.TextureLoader().load('img/1NP/vchod.jpg');
+    
+    var texture = new THREE.TextureLoader(loadingManager).load(panoImg);
     var material = new THREE.MeshBasicMaterial({
         map: texture
     });
@@ -59,20 +78,25 @@ function createRenderer() {
     //document.body.appendChild(renderer.domElement);
     container.appendChild(renderer.domElement);
 
-    container.style.touchAction = 'none';
+    //container.style.touchAction = 'none';
     container.addEventListener('pointerdown', onPointerDown, false);
 
     document.addEventListener('wheel', onDocumentMouseWheel, false);
 }
 
-function init() {
+function init(panoImg) {
 
     scene = new THREE.Scene();
     createCamera();
     //createLights();
-    createObjects();
+    createObjects(panoImg);
     createRenderer();
     animate();
+
+}
+
+function onTransitionEnd(event) {
+    event.target.remove();
 }
 
 /*
@@ -80,6 +104,9 @@ Change the background image
 */
 function changePanoImg(room) {
     //console.log("room: "+room)
+    spinner.innerHTML = '<section id="loading-screen"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></section>';
+    const loadingScreen = document.getElementById('loading-screen');
+    
     switch (room) {
         case 0:
             mesh.material.map.image.src = ('img/1np/vchod.jpg')
@@ -172,9 +199,11 @@ function changePanoImg(room) {
             }
             break;
     }
-    console.log(mesh.material.map.image.src)
+    //console.log(mesh.material.map.image.src)
     mesh.material.map.needsUpdate = true;
     $("#exampleModal").modal("hide");
+    loadingScreen.classList.add('fade-out');
+    loadingScreen.addEventListener('transitionend', onTransitionEnd);
     lon = 0;
     isUserInteracting = false;
     camera.fov = 85;
