@@ -12,6 +12,7 @@ var isUserInteracting = false,
 
 var panoImg = ('img/1NP/vchod.jpg');
 var spinner = document.getElementById('spinner');
+var zoom = true;
 
 init(panoImg);
 
@@ -44,6 +45,7 @@ function createObjects(panoImg) {
         loadingScreen.classList.add('fade-out');
 
         lon = 0;
+        lat = 0;
         isUserInteracting = false;
         camera.fov = 85;
         camera.updateProjectionMatrix();
@@ -56,7 +58,7 @@ function createObjects(panoImg) {
     geometry = new THREE.SphereBufferGeometry(500, 60, 40);
     // invert the geometry on the x-axis so that all of the faces point inward
     geometry.scale(-1, 1, 1);
-    
+
     var texture = new THREE.TextureLoader(loadingManager).load(panoImg);
     var material = new THREE.MeshBasicMaterial({
         map: texture
@@ -106,7 +108,7 @@ function changePanoImg(room) {
     //console.log("room: "+room)
     spinner.innerHTML = '<section id="loading-screen"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></section>';
     const loadingScreen = document.getElementById('loading-screen');
-    
+
     switch (room) {
         case 0:
             mesh.material.map.image.src = ('img/1np/vchod.jpg')
@@ -205,6 +207,7 @@ function changePanoImg(room) {
     loadingScreen.classList.add('fade-out');
     loadingScreen.addEventListener('transitionend', onTransitionEnd);
     lon = 0;
+    lat = 0;
     isUserInteracting = false;
     camera.fov = 85;
     camera.updateProjectionMatrix();
@@ -242,9 +245,8 @@ function onPointerMove(event) {
 
     if (event.isPrimary === false) return;
 
-    lon = (onPointerDownMouseX - event.clientX) * 0.2 + onPointerDownLon;
-    lat = (event.clientY - onPointerDownMouseY) * 0.2 + onPointerDownLat;
-
+    lon = (onPointerDownMouseX - event.clientX) * (0.0025 * camera.fov) + onPointerDownLon;
+    lat = (event.clientY - onPointerDownMouseY) * (0.0025 * camera.fov) + onPointerDownLat;
 }
 
 function onPointerUp() {
@@ -270,6 +272,24 @@ function onDocumentMouseWheel(event) {
 
     camera.updateProjectionMatrix();
 
+}
+
+document.addEventListener('dblclick', onDblClick);
+
+function onDblClick(event) {
+
+    // stop rotation after interaction
+    isUserInteracting = true;
+
+    if (zoom) {
+        camera.fov = 40;
+    } else {
+        camera.fov = 85;
+    }
+
+    zoom = !zoom;
+
+    camera.updateProjectionMatrix();
 }
 
 function animate() {

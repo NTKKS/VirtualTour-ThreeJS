@@ -118,6 +118,8 @@ button.btn-primary {
 
 .cls-1 {
   fill: #00b1f4;
+  stroke: #000
+  ;
 }
 
 .cls-1,
@@ -128,17 +130,19 @@ button.btn-primary {
 
 .cls-2 {
   fill: #d0d0d0;
+  stroke: #005879;
 }
 
 .cls-3 {
   fill: #fff;
+  stroke: #005879;
 }
 
 path {
   fill: #007bff;
-  stroke: #005879;
   stroke-width: 5px;
   stroke-linejoin: round;
+  stroke-dasharray: 20px;
 }
 
 /*
