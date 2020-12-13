@@ -168,6 +168,11 @@ path {
   }
 }
 
+@media (max-height: 600px){
+  .cover {
+    bottom: 15%;
+  }
+}
 
 #loading-screen {
   position: absolute;
