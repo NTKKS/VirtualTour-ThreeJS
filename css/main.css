@@ -51,8 +51,13 @@ body {
 }
 
 .masthead-brand {
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  margin-left: 25px;
   color: white;
+}
+
+h5.masthead-brand {
+  padding-top: 7px;
 }
 
 .nav-masthead .nav-link {
@@ -77,7 +82,7 @@ body {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 1000px) {
   .masthead-brand {
     float: left;
   }
@@ -86,6 +91,7 @@ body {
     float: right;
   }
 }
+
 
 /* Cover */
 
@@ -97,6 +103,10 @@ body {
   position: absolute;
   align-self: center;
   bottom: 5%;
+}
+
+.modal-body{
+  overflow: auto;
 }
 
 .modal-footer {
@@ -116,33 +126,37 @@ button.btn-primary {
 
 /* Map 1np */
 
-.cls-1 {
-  fill: #00b1f4;
-  stroke: #000
-  ;
-}
-
 .cls-1,
 .cls-2,
 .cls-3 {
   fill-rule: evenodd;
 }
 
+.cls-1 {
+  fill: rgb(0, 68, 255);
+  opacity: 40%;
+  stroke: #000;
+  ;
+}
+
 .cls-2 {
-  fill: #d0d0d0;
-  stroke: #005879;
+  fill: burlywood;
+  opacity: 35%;
+  stroke: #000;
 }
 
 .cls-3 {
-  fill: #fff;
-  stroke: #005879;
+  fill: burlywood;
+  opacity: 35%;
+  stroke: #000;
 }
 
 path {
-  fill: #007bff;
-  stroke-width: 5px;
+  fill: #000;
+  stroke-width: 15px;
   stroke-linejoin: round;
   stroke-dasharray: 20px;
+  cursor: pointer;
 }
 
 /*
@@ -189,4 +203,15 @@ path {
 
 #loading-screen.fade-out {
   opacity: 0;
+}
+
+.zoom{
+  position: relative;
+  transform: scale(2);
+  transform-origin: center center;
+}
+
+.zoom:hover{
+  cursor: grab;
+  overflow: auto;
 }

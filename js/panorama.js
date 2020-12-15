@@ -9,10 +9,16 @@ var isUserInteracting = false,
     onPointerDownLat = 0,
     phi = 0,
     theta = 0;
+zoomFactor = 1;
 
 var panoImg = ('img/1NP/vchod.jpg');
 var spinner = document.getElementById('spinner');
+var map = document.getElementById('map');
 var zoom = true;
+var zoomMap = false;
+var freeze = false;
+
+var rooms = ["Vchod budovy J", "J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10", "J11", "J12", "J13", "J14", "J15", "J16", "J17", "J18", "J19", "J20", "J21", "J22", "J23", "J24", "J25", "J26", "J27", "J28", "J29", "J30", "J31", "J32", "Relax zóna", "Recepce budovy J", "Šatní skříňky - 1.NP", "Studijní oddělení", "Tiskové služby a IDV", "Hala - 2.NP", "Chodba - 2.NP", "Šatní skříňky - 2.NP", "Levé schodiště - 2.NP", "Pravé schodiště - 2.NP", "Vstup do budovy A", "Vstup do budovy S", "Levé schodiště - 3.NP", "Pravé schodiště - 3.NP", "Plošina - 3.NP", "Levé schodiště - 4.NP", "Pravé schodiště - 4.NP"];
 
 init(panoImg);
 
@@ -108,85 +114,112 @@ function changePanoImg(room) {
     //console.log("room: "+room)
     spinner.innerHTML = '<section id="loading-screen"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></section>';
     const loadingScreen = document.getElementById('loading-screen');
+    const roomName = document.getElementById('roomName');
 
     switch (room) {
         case 0:
-            mesh.material.map.image.src = ('img/1np/vchod.jpg')
+            mesh.material.map.image.src = ('img/1np/vchod.jpg');
+            roomName.innerHTML = rooms[0] + ' - 1.NP';
             break;
         case 33:
-            mesh.material.map.image.src = ('img/1np/relax.jpg')
+            mesh.material.map.image.src = ('img/1np/relax.jpg');
+            roomName.innerHTML = rooms[33] + ' - 1.NP';
             break;
         case 34:
-            mesh.material.map.image.src = ('img/1np/vstupniHala.jpg')
+            mesh.material.map.image.src = ('img/1np/vstupniHala.jpg');
+            roomName.innerHTML = rooms[34] + ' - 1.NP';
             break;
         case 35:
-            mesh.material.map.image.src = ('img/1np/Satna1NP.jpg')
+            mesh.material.map.image.src = ('img/1np/Satna1NP.jpg');
+            roomName.innerHTML = rooms[35];
             break;
         case 36:
-            mesh.material.map.image.src = ('img/1np/StudijniOddeleni.jpg')
+            mesh.material.map.image.src = ('img/1np/StudijniOddeleni.jpg');
+            roomName.innerHTML = rooms[36] + ' - 1.NP';
             break;
         case 37:
-            mesh.material.map.image.src = ('img/2np/CopyIDV.jpg')
+            mesh.material.map.image.src = ('img/2np/CopyIDV.jpg');
+            roomName.innerHTML = rooms[37] + ' - 2.NP';
             break;
         case 38:
-            mesh.material.map.image.src = ('img/2np/hala2NP.jpg')
+            mesh.material.map.image.src = ('img/2np/hala2NP.jpg');
+            roomName.innerHTML = rooms[38];
             break;
         case 39:
-            mesh.material.map.image.src = ('img/2np/chodba2NP.jpg')
+            mesh.material.map.image.src = ('img/2np/chodba2NP.jpg');
+            roomName.innerHTML = rooms[39];
             break;
         case 40:
-            mesh.material.map.image.src = ('img/2np/RelaxJ4.jpg')
+            mesh.material.map.image.src = ('img/2np/RelaxJ4.jpg');
+            roomName.innerHTML = rooms[33] + ' - 2.NP';
             break;
         case 41:
-            mesh.material.map.image.src = ('img/2np/RelaxJ7.jpg')
+            mesh.material.map.image.src = ('img/2np/RelaxJ7.jpg');
+            roomName.innerHTML = rooms[33] + ' - 2.NP';
             break;
         case 42:
-            mesh.material.map.image.src = ('img/2np/RelaxJ10.jpg')
+            mesh.material.map.image.src = ('img/2np/RelaxJ10.jpg');
+            roomName.innerHTML = rooms[33] + ' - 2.NP';
             break;
         case 43:
-            mesh.material.map.image.src = ('img/2np/RelaxJ14.jpg')
+            mesh.material.map.image.src = ('img/2np/RelaxJ14.jpg');
+            roomName.innerHTML = rooms[33] + ' - 2.NP';
             break;
         case 44:
-            mesh.material.map.image.src = ('img/2np/Satna2NP.jpg')
+            mesh.material.map.image.src = ('img/2np/Satna2NP.jpg');
+            roomName.innerHTML = rooms[40];
             break;
         case 45:
-            mesh.material.map.image.src = ('img/2np/SchodisteL2NP.jpg')
+            mesh.material.map.image.src = ('img/2np/SchodisteL2NP.jpg');
+            roomName.innerHTML = rooms[41];
             break;
         case 46:
-            mesh.material.map.image.src = ('img/2np/SchodisteP2NP.jpg')
+            mesh.material.map.image.src = ('img/2np/SchodisteP2NP.jpg');
+            roomName.innerHTML = rooms[42];
             break;
         case 47:
-            mesh.material.map.image.src = ('img/2np/vstupA.jpg')
+            mesh.material.map.image.src = ('img/2np/vstupA.jpg');
+            roomName.innerHTML = rooms[43] + ' - 2.NP';
             break;
         case 48:
-            mesh.material.map.image.src = ('img/2np/vstupS.jpg')
+            mesh.material.map.image.src = ('img/2np/vstupS.jpg');
+            roomName.innerHTML = rooms[44] + ' - 2.NP';
             break;
         case 49:
-            mesh.material.map.image.src = ('img/3np/RelaxJ20.jpg')
+            mesh.material.map.image.src = ('img/3np/RelaxJ20.jpg');
+            roomName.innerHTML = rooms[33] + ' - 3.NP';
             break;
         case 50:
-            mesh.material.map.image.src = ('img/3np/RelaxJ24.jpg')
+            mesh.material.map.image.src = ('img/3np/RelaxJ24.jpg');
+            roomName.innerHTML = rooms[33] + ' - 3.NP';
             break;
         case 51:
-            mesh.material.map.image.src = ('img/3np/SchodisteL3NP.jpg')
+            mesh.material.map.image.src = ('img/3np/SchodisteL3NP.jpg');
+            roomName.innerHTML = rooms[45];
             break;
         case 52:
-            mesh.material.map.image.src = ('img/3np/SchodisteP3NP.jpg')
+            mesh.material.map.image.src = ('img/3np/SchodisteP3NP.jpg');
+            roomName.innerHTML = rooms[46];
             break;
         case 53:
-            mesh.material.map.image.src = ('img/3np/plosina.jpg')
+            mesh.material.map.image.src = ('img/3np/plosina.jpg');
+            roomName.innerHTML = rooms[47];
             break;
         case 54:
-            mesh.material.map.image.src = ('img/4np/RelaxJ30.jpg')
+            mesh.material.map.image.src = ('img/4np/RelaxJ30.jpg');
+            roomName.innerHTML = rooms[33] + ' - 4.NP';
             break;
         case 55:
-            mesh.material.map.image.src = ('img/4np/RelaxJ31.jpg')
+            mesh.material.map.image.src = ('img/4np/RelaxJ31.jpg');
+            roomName.innerHTML = rooms[33] + ' - 4.NP';
             break;
         case 56:
-            mesh.material.map.image.src = ('img/4np/SchodisteL4NP.jpg')
+            mesh.material.map.image.src = ('img/4np/SchodisteL4NP.jpg');
+            roomName.innerHTML = rooms[48];
             break;
         case 57:
-            mesh.material.map.image.src = ('img/4np/SchodisteP4NP.jpg')
+            mesh.material.map.image.src = ('img/4np/SchodisteP4NP.jpg');
+            roomName.innerHTML = rooms[49];
             break;
 
 
@@ -194,10 +227,13 @@ function changePanoImg(room) {
             //alert(room + " clicked")
             if (room <= 15) {
                 mesh.material.map.image.src = ('img/2np/J' + room + '.jpg');
+                roomName.innerHTML = rooms[room] + ' - 2.NP';
             } else if (room > 15 && room <= 25) {
                 mesh.material.map.image.src = ('img/3np/J' + room + '.jpg');
+                roomName.innerHTML = rooms[room] + ' - 3.NP';
             } else {
                 mesh.material.map.image.src = ('img/4np/J' + room + '.jpg');
+                roomName.innerHTML = rooms[room] + ' - 4.NP';
             }
             break;
     }
@@ -211,6 +247,10 @@ function changePanoImg(room) {
     isUserInteracting = false;
     camera.fov = 85;
     camera.updateProjectionMatrix();
+}
+
+function freezePano() {
+    freeze = !freeze;
 }
 
 window.addEventListener('resize', onWindowResize, false);
@@ -243,10 +283,12 @@ function onPointerDown(event) {
 
 function onPointerMove(event) {
 
-    if (event.isPrimary === false) return;
+    if (!freeze) {
+        if (event.isPrimary === false) return;
 
-    lon = (onPointerDownMouseX - event.clientX) * (0.0025 * camera.fov) + onPointerDownLon;
-    lat = (event.clientY - onPointerDownMouseY) * (0.0025 * camera.fov) + onPointerDownLat;
+        lon = (onPointerDownMouseX - event.clientX) * (0.0025 * camera.fov) + onPointerDownLon;
+        lat = (event.clientY - onPointerDownMouseY) * (0.0025 * camera.fov) + onPointerDownLat;
+    }
 }
 
 function onPointerUp() {
@@ -263,14 +305,26 @@ function onPointerUp() {
 
 function onDocumentMouseWheel(event) {
 
-    // stop rotation after interaction
-    isUserInteracting = true;
+    if (!freeze) {
+        // stop rotation after interaction
+        isUserInteracting = true;
 
-    var fov = camera.fov + event.deltaY * 0.05;
+        var fov = camera.fov + event.deltaY * 0.05;
 
-    camera.fov = THREE.MathUtils.clamp(fov, 10, 120);
+        camera.fov = THREE.MathUtils.clamp(fov, 10, 120);
 
-    camera.updateProjectionMatrix();
+        camera.updateProjectionMatrix();
+    } else {
+        if (zoomFactor > 1) {
+            zoomMap = true;
+        } else {
+            zoomMap = false;
+        }
+        zoomFactor += (-event.deltaY) * 0.001;
+        zoomFactor = THREE.MathUtils.clamp(zoomFactor, 1, 5);
+        map.style.transformOrigin = '0% 0%';
+        map.style.transform = 'scale(' + zoomFactor + ')';
+    }
 
 }
 
@@ -278,18 +332,35 @@ document.addEventListener('dblclick', onDblClick);
 
 function onDblClick(event) {
 
-    // stop rotation after interaction
-    isUserInteracting = true;
+    if (!freeze) {
+        // stop rotation after interaction
+        isUserInteracting = true;
 
-    if (zoom) {
-        camera.fov = 40;
+        if (zoom) {
+            camera.fov = 40;
+        } else {
+            camera.fov = 85;
+        }
+
+        zoom = !zoom;
+
+        camera.updateProjectionMatrix();
     } else {
-        camera.fov = 85;
+
+        if (!zoomMap) {
+            map.classList.add('zoom');
+            zoomFactor = 2;
+            map.style.transformOrigin = '0% 0%';
+            map.style.transform = 'scale(' + zoomFactor + ')';
+        } else {
+            map.classList.remove('zoom');
+            zoomFactor = 1;
+            map.style.transformOrigin = '0% 0%';
+            map.style.transform = 'scale(' + zoomFactor + ')';
+        }
+
+        zoomMap = !zoomMap;
     }
-
-    zoom = !zoom;
-
-    camera.updateProjectionMatrix();
 }
 
 function animate() {
