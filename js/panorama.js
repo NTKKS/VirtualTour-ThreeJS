@@ -18,7 +18,7 @@ var zoom = true;
 var zoomMap = false;
 var freeze = false;
 
-var rooms = ["Vchod budovy J", "J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10", "J11", "J12", "J13", "J14", "J15", "J16", "J17", "J18", "J19", "J20", "J21", "J22", "J23", "J24", "J25", "J26", "J27", "J28", "J29", "J30", "J31", "J32", "Relax zóna", "Recepce budovy J", "Šatní skříňky - 1.NP", "Studijní oddělení", "Tiskové služby a IDV", "Hala - 2.NP", "Chodba - 2.NP", "Šatní skříňky - 2.NP", "Levé schodiště - 2.NP", "Pravé schodiště - 2.NP", "Vstup do budovy A", "Vstup do budovy S", "Levé schodiště - 3.NP", "Pravé schodiště - 3.NP", "Plošina - 3.NP", "Levé schodiště - 4.NP", "Pravé schodiště - 4.NP"];
+var rooms = ["Vchod budovy J", "J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10", "J11", "J12", "J13", "J14", "J15", "J16", "J17", "J18", "J19", "J20", "J21", "J22", "J23", "J24", "J25", "J26", "J27", "J28", "J29", "J30", "J31", "J32", "Relax zóna", "Recepce budovy J", "Šatní skříňky - 1.NP", "Studijní oddělení", "Tiskové služby a IDV", "Hala - 2.NP", "Chodba - 2.NP", "Šatní skříňky - 2.NP", "Levé schodiště - 2.NP", "Pravé schodiště - 2.NP", "Vstup do budovy A", "Vstup do budovy S", "Levé schodiště - 3.NP", "Pravé schodiště - 3.NP", "Plošina - 3.NP", "Levé schodiště - 4.NP", "Pravé schodiště - 4.NP", "Zasedací místnost", "Pánské toalety", "Dámské toalety", "Výtah"];
 
 init(panoImg);
 
@@ -220,6 +220,46 @@ function changePanoImg(room) {
         case 57:
             mesh.material.map.image.src = ('img/4np/SchodisteP4NP.jpg');
             roomName.innerHTML = rooms[49];
+            break;
+        case 58:
+            mesh.material.map.image.src = ('img/1np/zasedaciMistnost.jpg');
+            roomName.innerHTML = rooms[50] + ' - 1.NP';
+            break;
+        case 59:
+            mesh.material.map.image.src = ('img/1np/zachodyPanske1NP.jpg');
+            roomName.innerHTML = rooms[51] + ' - 1.NP';
+            break;
+        case 60:
+            mesh.material.map.image.src = ('img/1np/zachodyDamske1NP.jpg');
+            roomName.innerHTML = rooms[52] + ' - 1.NP';
+            break;
+        case 61:
+            mesh.material.map.image.src = ('img/1np/vytah.jpg');
+            roomName.innerHTML = rooms[53];
+            break;
+        case 62:
+            mesh.material.map.image.src = ('img/2np/zachodyPanske2NP.jpg');
+            roomName.innerHTML = rooms[51] + ' - 2.NP';
+            break;
+        case 63:
+            mesh.material.map.image.src = ('img/2np/zachodyDamske2NP.jpg');
+            roomName.innerHTML = rooms[52] + ' - 2.NP';
+            break;
+        case 64:
+            mesh.material.map.image.src = ('img/3np/zachodyPanske3NP.jpg');
+            roomName.innerHTML = rooms[51] + ' - 3.NP';
+            break;
+        case 65:
+            mesh.material.map.image.src = ('img/3np/zachodyDamske3NP.jpg');
+            roomName.innerHTML = rooms[52] + ' - 3.NP';
+           break;
+           case 66:
+            mesh.material.map.image.src = ('img/3np/zachodyPanske3NP.jpg');
+            roomName.innerHTML = rooms[51] + ' - 4.NP';
+            break;
+        case 67:
+            mesh.material.map.image.src = ('img/3np/zachodyDamske3NP.jpg');
+            roomName.innerHTML = rooms[52] + ' - 4.NP';
             break;
 
 
