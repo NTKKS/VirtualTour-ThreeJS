@@ -7,18 +7,6 @@ a:hover {
   color: #fff;
 }
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none;
-  /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
 /* Base structure */
 
 html,
@@ -103,15 +91,37 @@ h5.masthead-brand {
   position: absolute;
   align-self: center;
   bottom: 5%;
-}
+} 
 
 .modal-body{
-  overflow: auto;
+  overflow: hidden;
+}
+
+@media (max-height: 800px) {
+  .modal-body{
+    max-height: 600px;
+  }
+}
+@media (max-height: 730px) {
+  .modal-body{
+    max-height: 530px;
+  }
+}
+@media (max-height: 650px) {
+  .modal-body{
+    max-height: 450px;
+  }
+}
+@media (max-height: 560px) {
+  .modal-body{
+    max-height: 360px;
+  }
 }
 
 .modal-footer {
   justify-content: center;
   margin: auto;
+  width: 100%;
 }
 
 button.btn-primary {
@@ -206,9 +216,8 @@ path {
 }
 
 .zoom{
-  position: relative;
   transform: scale(2);
-  transform-origin: center center;
+  transform-origin: 0% 0%;
 }
 
 .zoom:hover{

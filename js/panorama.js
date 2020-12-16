@@ -364,6 +364,7 @@ function onDocumentMouseWheel(event) {
         zoomFactor = THREE.MathUtils.clamp(zoomFactor, 1, 5);
         map.style.transformOrigin = '0% 0%';
         map.style.transform = 'scale(' + zoomFactor + ')';
+        $('#exampleModal').modal('handleUpdate');
     }
 
 }
@@ -390,12 +391,12 @@ function onDblClick(event) {
         if (!zoomMap) {
             map.classList.add('zoom');
             zoomFactor = 2;
-            map.style.transformOrigin = '0% 0%';
+            map.style.transformOrigin = '0 0';
             map.style.transform = 'scale(' + zoomFactor + ')';
         } else {
             map.classList.remove('zoom');
             zoomFactor = 1;
-            map.style.transformOrigin = '0% 0%';
+            map.style.transformOrigin = '0 0';
             map.style.transform = 'scale(' + zoomFactor + ')';
         }
 
