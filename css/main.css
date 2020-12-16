@@ -94,7 +94,7 @@ h5.masthead-brand {
 } 
 
 .modal-body{
-  overflow: hidden;
+  overflow: auto;
 }
 
 @media (max-height: 800px) {
