@@ -1,3 +1,4 @@
+
 /* Change floor */
 
 function changeFloorPlan(num) {
