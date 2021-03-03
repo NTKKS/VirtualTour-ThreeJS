@@ -32,16 +32,8 @@ function createCamera() {
     const far = 1100; // the far clipping plane
 
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    //camera.position.z = 5;
     camera.target = new THREE.Vector3(0, 0, 0);
 }
-
-/* function createLights() {
-    // Create a point light
-    const light = new THREE.PointLight(0xff0000, 1, 30);
-    light.position.set(5, 5, 5);
-    scene.add(light);
-} */
 
 function createObjects(panoImg) {
 
@@ -96,7 +88,6 @@ function init(panoImg) {
 
     scene = new THREE.Scene();
     createCamera();
-    //createLights();
     createObjects(panoImg);
     createRenderer();
     animate();
