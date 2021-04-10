@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtuální prohlídka FIM</title>
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <title>Virtual tour FIM</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -16,11 +18,11 @@
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column user-select-none">
         <header class="masthead mb-auto">
             <div class="inner">
-                <h3 class="masthead-brand">Virtuální prohlídka FIM - Budova J</h3>
-                <h5 class="masthead-brand" id="roomName">Vchod budovy J - 1.NP</h5>
+                <h3 class="masthead-brand">FIM - Virtual tour - Building J</h3>
+                <h5 class="masthead-brand" id="roomName">Entrance to building J - 1.NP</h5>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" id="btnCZ">CZ</a>
-                    <a class="nav-link" id="btnEN" href="en.html">EN</a>
+                    <a class="nav-link" id="btnCZ" href="index.html">CZ</a>
+                    <a class="nav-link active" id="btnEN">EN</a>
                 </nav>
             </div>
         </header>
@@ -39,7 +41,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Zobrazit mapu
+                Show map
             </button>
 
             <!-- Modal -->
@@ -51,37 +53,37 @@
                         <div class="modal-body" id="modal-body">
                             <div class="mapdiv" id="map">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3508 4961">
-                                    <a data-toggle="tooltip" title="Vchod budovy J">
+                                    <a data-toggle="tooltip" title="Entrance to building J">
                                         <path id="Vchod" class="cls-2" onclick="changePanoImg(0)"
                                             d="M1549,3446c-0.31,35.64-7.1,77.96-1,111q165.99-1.005,332-2c16.88-.83,109.1,5.54,115-2,11.11-27.33-6.64-71.47-1-102l907-3q42,226.98,84,454H561v-1q38.5-222.48,77-445,169.983-.495,340-1c1.174-12.19,20.344-8.73,33-8Q1279.98,3446.505,1549,3446Z" />
                                     </a>
-                                    <a data-toggle="tooltip" title="Relax zóna">
+                                    <a data-toggle="tooltip" title="Relax zone">
                                         <path id="Relax" class="cls-1" onclick="changePanoImg(33)"
                                             d="M1910,1958h5q3.495,88.995,7,178c1.64,9.36-3.04,13.08-4,18q0.495,21.495,1,43h34c0.33-3.33.67-6.67,1-10q151.485-.495,303-1c0.18,15.65,26.13,10.72,41,10,1.66-15.87,3.88-31.57-1-47-2-.33-4-0.67-6-1-3.77-65.48-23.92-135.34-19-199q84.99-.495,170-1c11.65,0,55.5-2.78,61,2q28.5,174.99,57,350c2.24,22.68,23.56,108.15,18,123q-317.97,1.005-636,2c-0.24,11.1-1.68,20.61,1,29q27,0.495,54,1,1.995,55.5,4,111-89.49.495-179,1-0.495,10.005-1,20H1709q-0.495-10.005-1-20-90.99.495-182,1,2.505-56.49,5-113h54q-0.495-14.505-1-29-318.465,1.005-637,2v-3l33-224q142.98-.495,286-1,0.495-6,1-12,152.49-.495,305-1v11q18.495-.495,37-1v-45c-6.78-3.25-5.69-12.99-5-23q2.505-84.99,5-170h5c0.25-18.44,37.56-11,55-11h241v10Zm-212,232c-3.78,3.04-6.75,4.24-9,9-6.24,15.46-2.26,91.37,2,105,12.29,4.72,99.55,8.73,109,0,11.56-7.88,6.93-101.04,0-112C1770.64,2186.55,1730.84,2189.92,1698,2190Z" />
                                     </a>
-                                    <a data-toggle="tooltip" title="Recepce budovy J">
+                                    <a data-toggle="tooltip" title="Reception - Building J">
                                         <path id="Recepce budovy J" class="cls-2" onclick="changePanoImg(34)"
                                             d="M2851,3042h-20q-3,10.005-6,20H2723v-3c2.37-6.28,1.8-9.57,1-17-29.96,6.43-168.83-31.15-156,22h-6v-1c2.96-7.51,2.87-11.52,2-20-11.32,2.09-43.89-5.16-53,3q-1.995,8.505-4,17c-14,.36-44.8,3.98-53-3,3.05-5.97,2.08-10.68,2-17q-62.49,1.005-125,2-1.005,10.005-2,20h-54v-1a40.554,40.554,0,0,0,1-19h-84c-18.78-2.91-50.54-3.67-68,1q-1.005,9-2,18h-51v-3q0.495-7.995,1-16-53.49,1.005-107,2,6,178.485,12,357-9.495,1.005-19,2-0.495,6-1,12h-87q-0.495,9-1,18h-47c0.67-18.52,3.51-45-9-51-13.21-6.62-87.68-3.56-103,0-8.55,12.21-2.48,34.11-7,52h-25q-1.5-9.495-3-19-45.495.495-91,1-1.005-10.5-2-21h-21q3-116.49,6-233c4.25-27.42,6.88-93.07,2-120q-116.49,1.005-233,2-0.495,9-1,18c-12.58.32-48.45,4.81-56-2q-1.995-8.505-4-17H1117v20h-52c-0.57-7.71-2.78-14.98-6-20q-43.995.495-88,1c-16.465-5.39-76.239-9-99-4-13.949,3.07-35.972,5-59,5,0.026,6.29-1.7,10.95,0,19q-50.495-.495-101-1-2.5-9-5-18H689q5-27.495,10-55c-4.176-10.47,9.314-40.58,9-58l34-191,835-3q1.995-73.995,4-148,123.495-.495,247-1,59.49,0.495,119,1l6,147c207.86-.04,416.56-1.99,625-2q79.485-.495,159-1c13.24,0,48.79-5.1,57,2q4.005,21.495,8,43c6.17,28.39,9.76,52.21,15,80,3.3,17.48,6.87,41.65,14,56q4.005,30,8,60Q2845,3010,2851,3042ZM1194,2810q-4.5,2.505-9,5c-7.44,23.96-7.33,81.3-1,107,11.79,8.6,107.5,11.18,114-2,7.02-12.69,2.6-97.94-3-107C1268.62,2805.27,1225.68,2809.88,1194,2810Zm979,0q-4.995,3-10,6c-5.62,20.17-5.13,97.13,4,110,20.93,5.71,84.87,5.21,106,0,9.43-14.07,9.33-87.65,4-109C2258.07,2803.16,2203.94,2809.72,2173,2810Z" />
                                     </a>
-                                    <a data-toggle="tooltip" title="Šatní skříňky">
+                                    <a data-toggle="tooltip" title="Locker room - 1.NP">
                                         <path id="Satna1NP" class="cls-1" onclick="changePanoImg(35)"
                                             d="M2507,2707H1970c0.08-37.82-3.89-70.87-4-109q27.495-.495,55-1c1.32-48.38-4.65-94.8-5-143q284.475-.495,569-1,19.995,126.48,40,253h-65v2q-2.505,9-5,18h-48v-19Zm-995-109h54c0.16,29.04,1.05,55.79-3,82q-0.495,15-1,30-269.97,1.005-540,2v20H978q-2-10.005-4-20H905v-1l39-254q285.465-.495,571-1C1515.05,2503.92,1509.17,2552.85,1512,2598Zm-339-97q-5.505,3-11,6c-3.86,14.04-6.71,88.78-1,103q4.005,4.5,8,9c26.67,0.33,89.98,5.54,106-5,5.55-17.52,7.46-106.32-6-112Q1221,2501.505,1173,2501Zm1065,0q-4.995,2.505-10,5c-5.07,14.1-6.49,103.46,3,110,7.22,5.97,89.88,4.72,104,2,12.17-9.07,13.13-108.25-1-115C2317.33,2495.27,2260.92,2500.83,2238,2501Z" />
                                     </a>
-                                    <a data-toggle="tooltip" title="Studijní oddělení">
+                                    <a data-toggle="tooltip" title="Study departement">
                                         <path id="Studijni" class="cls-2" onclick="changePanoImg(36)"
                                             d="M922,2457q-12.5,87.99-25,176c-10.3,30.61-15.554,74.96-12,105H743q-3-10.005-6-20l-398,3v-1q15.5-61.5,31-123H768l25-140H922Z" />
                                     </a>
-                                    <a data-toggle="tooltip" title="Zasedací místnost">
+                                    <a data-toggle="tooltip" title="Boardroom">
                                         <path id="zasedaciMistnost" class="cls-1" onclick="changePanoImg(58)"
                                             d="M720,2750l-23,130c-3.794,16.98,6.379,25.03,4,40q-5,27-10,54c-3.666.33-7.334,0.67-11,1L567,3611q-224.478,1.005-449,2,106.489-430.455,213-861,66.494-.495,133-1-14,63-28,126c-12.058-.32-45.814-4.5-53,2-6.109,11.18,1.634,20.07,5,30q122.488-1.005,245-2c2.14-13.01-.527-20.35-5-31q-81.492.495-163,1,13.5-63,27-126h58l3,9h7c-3.863,34.15-15.739,52.87-6,85,6.622,0.38,12.389.91,15-3q10-45.99,20-92H720ZM406,3054c-3.962,3.09-6.727,4.01-9,9-7.032,16.67-3.373,90.5,2,105,8.422,4.13,96.908,8.56,106,2q4-3.495,8-7-0.5-51-1-102C492.906,3046.91,437.241,3053.7,406,3054Z" />
                                     </a>
-                                    <a data-toggle="tooltip" title="Pánské záchody">
+                                    <a data-toggle="tooltip" title="Men's toilets">
                                         <path id="zachodyPanske1NP" class="cls-1" onclick="changePanoImg(59)"
                                             d="M2206,3161q-36.99.495-74,1l-3,18h-51v-3c1.73-5.29,1.04-13.94-1-16h-89q-1.5-43.995-3-88h215Q2203,3117,2206,3161Zm-27,29c17.19-.23,108.17-4.01,115,2q10.005,104.985,20,210l-1,1H1998q-4.005-105.99-8-212Q2084.485,3190.505,2179,3190Zm-93,33c-2,.33-4,0.67-6,1q-3,4.005-6,8c-5.98,12.33-2.77,102.53,4,107,12.86,8.5,103.92,1.36,111-5,3.29-16.97,3.42-103.74-5-109C2172.51,3217.81,2105.15,3222.7,2086,3223Z" />
-                                    </a><a data-toggle="tooltip" title="Dámské záchody">
+                                    </a><a data-toggle="tooltip" title="Women's toilets">
                                         <path id="zachodyDamske1NP" class="cls-1" onclick="changePanoImg(60)"
                                             d="M2371,3160q-4.5-43.995-9-88h155c2.55,37.04,15.94,75.4,4,107q-25.5-.495-51-1c1.03-8.05,1.54-14.28-3-19Q2419,3159.5,2371,3160Zm77,29h108q14.505,105.99,29,212H2361q-10.5-104.985-21-210l1-1Q2394.49,3189.505,2448,3189Zm-34,34c-3.49,2.18-5.83,2.32-8,6-7.34,7.96-4,33.46-4,48,0,16.02-4.63,48.8,3,59,5.43,7.25,91.34,7.1,107,4,9.97-7.3,13.48-107.91,2-115C2500.1,3216.41,2432.39,3224.42,2414,3223Z" />
-                                    </a><a data-toggle="tooltip" title="Výtahy">
+                                    </a><a data-toggle="tooltip" title="Elevator">
                                         <path id="vytah" class="cls-3" onclick="changePanoImg(61)"
                                             d="M1115,1505c18.41-.31,87.49-4.95,98,2,7.83,5.19,7.32,91.56,4,107-13,9.31-96.47,9.91-111,1-5.2-20.89-5.55-87.14,1-106C1109.67,1507.67,1112.33,1506.33,1115,1505Zm27,10q-6.495,7.005-13,14c0.67,1,1.33,2,2,3,5.85-1.09,6.31-3.16,10-6q0.495,8.505,1,17c1.67-.33,3.33-0.67,5-1v-16q3.495,3,7,6c1.33-.33,2.67-0.67,4-1v-4C1152.57,1522.71,1150.02,1516.71,1142,1515Zm33,0q-0.495,7.995-1,16-3.495-3-7-6c-1.33,1-2.67,2-4,3l15,15q7.005-6.495,14-13v-1c-0.67-1.33-1.33-2.67-2-4h-3l-6,6v-16h-6Zm-73,34v42h-21l6-42h15Zm33,0c-0.67,2.33-1.33,4.67-2,7,1,0.67,2,1.33,3,2h4c2.05-1.36,1.61-1.12,3-3-0.86-4.53.12-2.98-3-5C1138.33,1549.67,1136.67,1549.33,1135,1549Zm45,0c-1,1.33-2,2.67-3,4l3,6h5c1-1.67,2-3.33,3-5-1-1.67-2-3.33-3-5h-5Zm112,42q-16.005.495-32,1v10c0.33,3.67.67,7.33,1,11q-18-.495-36-1c-0.74-18.86-9.74-39.19-4-61q37.5-.495,75-1Q1294.005,1570.505,1292,1591Zm-160,1q0.495,10.005,1,20h1c1.67-1.33,3.33-2.67,5-4,0.67,1.33,1.33,2.67,2,4,1-.67,2-1.33,3-2v-18h6q-1.5-5.505-3-11c1.92,1.39.6,0.1,2,2,1.33-.67,2.67-1.33,4-2a54.5,54.5,0,0,0-8-20q-7.005.495-14,1c-5.13,3.47-7.59,13.1-8,21,1.33-.33,2.67-0.67,4-1l1,1c-0.67,3-1.33,6-2,9h6Zm41-31c-1,1.33-2,2.67-3,4v20c2-.67,4-1.33,6-2q0.495,14.505,1,29h1c5.64-1.87,5.57-.09,11-2q0.495-20.505,1-41,0.495,7.995,1,16h3l1-1c0.21-8.34-.37-16.29-2-22-0.67-.33-1.33-0.67-2-1h-18ZM2578,3039c18.06-.32,91.31-4.81,101,2,8.03,5.64,6.37,92.71,3,107-2,1.33-4,2.67-6,4H2576c-10.54-8.27-9.66-89.68-5-108C2573.33,3042.33,2575.67,3040.67,2578,3039Zm-1708,6c31.364-.21,72.372-4.73,100,2,6.942,10.21,9.108,103.96-1,110-8.51,6.77-89.667,4.13-103,1-8.394-12.03-7.875-86.67-4-107Zm1736,31h6v-17q4.005,3.495,8,7c1-.67,2-1.33,3-2v-3c-15.44-12.73-12.55-12.45-28,0v3c1,0.67,2,1.33,3,2q4.005-3.495,8-7v17Zm35-28q-0.495,8.505-1,17-3.495-3-7-6c-1.33.33-2.67,0.67-4,1v4q6.495,6,13,12h3q6-6.495,12-13c-0.33-1.33-.67-2.67-1-4h-4l-6,6q-0.495-8.505-1-17h-4ZM903,3082q0.5-7.995,1-16l6,6h1l4-3-14-15c-1,.33-2,0.67-3,1q-6,6.495-12,13v2c1,0.67,2,1.33,3,2l8-6q0.5,7.995,1,16h5Zm34-27c-2,.33-4,0.67-6,1v15l-9-6-2,3,14,15,15-15-2-3h-3l-6,6h-1v-16Zm-87,25h9c-0.49,20.28-6.237,71.44,7,79,14.281,7.86,97.643,2.2,109-3q-1.5,11.505-3,23-66.993.495-134,1C831.76,3170.29,849.186,3099.2,850,3080Zm1750,3c-0.67,2.33-1.33,4.67-2,7,1.67,1,3.33,2,5,3,1-.33,2-0.67,3-1l2-2c-0.67-2.33-1.33-4.67-2-7h-6Zm44,0c-1.42,3.57-1.54,3.84-1,8,4.44,1.42,6.66,1.6,9-2v-5C2649.33,3083.67,2646.67,3083.33,2644,3083Zm-68,87q-1.005-7.995-2-16c29.25,3.9,78.7,5.68,106-1,10.19-15.71-.91-45.49,7-66q6,40.995,12,82Q2637.5,3169.5,2576,3170ZM892,3089c-1,1.33-2,2.67-3,4,0.667,1.67,1.333,3.33,2,5h7q1-3,2-6l-3-3h-5Zm44,0c-0.667,2.33-1.333,4.67-2,7,1,0.67,2,1.33,3,2,3.058-.02,3.858-0.22,7-2v-4c-1-.67-2-1.33-3-2C939.333,3089.67,937.667,3089.33,936,3089Zm1661,36q0.495,10.005,1,20h1c4.72-.7,5.38.47,10-1v-19h6c-0.67-3-1.33-6-2-9h5q-3.495-10.5-7-21c-7.27-1.15-12.97-.92-18,2q-2.505,9.495-5,19h5c-0.67,3-1.33,6-2,9h6Zm43-31c-1.67,1.33-3.33,2.67-5,4-0.34,6.94-.95,17.15,2,21,1.33-.67,2.67-1.33,4-2q0.495,13.995,1,28h1c4.09-1.46,2.67-1.33,5-4,1.63,4.37.04,2.94,5,4l1-1v-26h6q-0.495-9.495-1-19c-0.67-1.33-1.33-2.67-2-4Q2648.5,3094.505,2640,3094Zm-1750,6c-6.8,5.34-7.937,11.82-11,21,0.333,0.67.667,1.33,1,2,1.667-.67,3.333-1.33,5-2v1l-3,9c2.333,0.33,4.667.67,7,1-0.335,6.75-.853,16.29,2,20l2-3c1.941-5.31.25-15.04,2-18-0.436,8.04-.876,17.17,3,21,0.667-.33,1.333-0.67,2-1q0.5-10.005,1-20h6l-3-9c4.2,0.22,2.837.66,6-1q-4-10.005-8-20Q896,3100.505,890,3100Zm43,0c-2.668,1.76-3.191,1.17-5,4-2.766,4.08-2.713,15.54-1,21h3c0.333-.33.667-0.67,1-1q0.5-7.995,1-16c-0.356,12.87-2.82,36.33,3,44,2.8-2.02,2.9-2.43,5-3,1.355,2.05,1.12,1.61,3,3,0.667-.33,1.333-0.67,2-1q0.5-13.995,1-28c2.123,1.3,1.447,1.23,5,2v-20c-1-1.33-2-2.67-3-4Q940.5,3100.505,933,3100Z" />
                                     </a>
@@ -90,7 +92,7 @@
                         </div>
                         <div class="modal-footer" id="modal-footer">
                             <button type="button" class="btn btn-primary" disabled></button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Skrýt mapu</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hide map</button>
                             <button type="button" class="btn btn-primary" onclick="changeFloorPlan(2)">2.NP</button>
                         </div>
                     </div>
@@ -100,13 +102,13 @@
         </main>
 
         <div class="arrows">
-        <button type="button" class="prevImg btn btn-outline-primary" onclick="arrows(currentRoom-1)">&#60</button>
-        <button type="button" class="nextImg btn btn-outline-primary" onclick="arrows(currentRoom+1)">&#62</button>
+            <button type="button" class="prevImg btn btn-outline-primary" onclick="arrows(currentRoom-1)">&#60</button>
+            <button type="button" class="nextImg btn btn-outline-primary" onclick="arrows(currentRoom+1)">&#62</button>
         </div>
 
         <footer class="mastfoot mt-auto user-select-none">
             <div class="inner">
-                <p>Bakalářská práce 2021 - Využití sférického panorama v rozsáhlejší scéně, Autor: Jan Janás</p>
+                <p>Bachelors thesis 2021 - Panorama image processing, Author: Jan Janás</p>
             </div>
         </footer>
     </div>
@@ -141,18 +143,18 @@
         });
     </script>
 
-    <script type='text/javascript'>
-        function isItIE() {
-        user_agent = navigator.userAgent;
-        var is_it_ie = user_agent.indexOf("MSIE ") > -1 || user_agent.indexOf("Trident/") > -1;
-        return is_it_ie; 
-        }
-        if (isItIE()){
-            console.log('It is Internet Explorer');
-            var body = document.getElementById('container');
-            body.innerHTML = '<h1>Tento webový prohlížeč již není podporován, použijte moderní prohlížeč.<br>This web browser is no longer supported, use a modern browser.</h1>';
-        }
-    </script>
+<script type='text/javascript'>
+    function isItIE() {
+    user_agent = navigator.userAgent;
+    var is_it_ie = user_agent.indexOf("MSIE ") > -1 || user_agent.indexOf("Trident/") > -1;
+    return is_it_ie; 
+    }
+    if (isItIE()){
+        console.log('It is Internet Explorer');
+        var body = document.getElementById('container');
+        body.innerHTML = '<h1>Tento webový prohlížeč již není podporován, použijte moderní prohlížeč.<br>This web browser is no longer supported, use a modern browser.</h1>';
+    }
+</script>
 
 </body>
 

@@ -7,6 +7,28 @@ a:hover {
   color: #fff;
 }
 
+#btnCZ{
+  margin-left: auto;
+}
+
+.prevImg, .nextImg{
+  height: 100px;
+  width: 50px;
+  margin: 10px;
+}
+
+.prevImg:hover, .nextImg:hover{
+  background-color: rgba(0, 123, 255, 0.75);
+}
+
+.nextImg{
+  margin-left: auto;
+}
+
+.arrows{
+  display: flex;
+}
+
 /* Base structure */
 
 html,
@@ -43,10 +65,6 @@ body {
   color: white;
 }
 
-h5.masthead-brand {
-  padding-top: 7px;
-}
-
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
@@ -69,7 +87,9 @@ h5.masthead-brand {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 1000px) {
+h5{margin-right: 20px;}
+
+@media (min-width: 600px) {
   .masthead-brand {
     float: left;
   }
@@ -89,7 +109,7 @@ h5.masthead-brand {
   margin: auto;
   position: absolute;
   align-self: center;
-  bottom: 5%;
+  bottom: 10%;
 } 
 
 .modal-body{
@@ -123,17 +143,12 @@ h5.masthead-brand {
   width: 100%;
 }
 
-button.btn-primary {
-  min-width: 100px;
-  min-height: 38px;
-}
-
 /* Footer */
 .mastfoot {
   color: rgba(255, 255, 255, .8);
 }
 
-/* Map 1np */
+/* Map */
 
 .cls-1,
 .cls-2,
@@ -203,22 +218,6 @@ path {
   fill: rgba(0, 0, 0, .25);
 }
 
-@media (max-width: 600px) {
-  .cover {
-    bottom: 10%;
-  }
-
-  button.btn-primary {
-    min-width: 60px;
-  }
-}
-
-@media (max-height: 600px){
-  .cover {
-    bottom: 15%;
-  }
-}
-
 #loading-screen {
   position: absolute;
   z-index: 2;
@@ -234,6 +233,7 @@ path {
 
 #loading-screen.fade-out {
   opacity: 0;
+  height: 0;
 }
 
 .zoom{
@@ -244,4 +244,144 @@ path {
 .zoom:hover{
   cursor: grab;
   overflow: auto;
+}
+
+/* Responziveness */
+
+@media (min-height: 500px){
+
+  h5.masthead-brand {
+    padding-top: 7px;
+  }
+  
+  .btn-primary,.btn-secondary{
+    min-height: 38px;
+    min-width: 60px;
+  }
+
+@media (min-width: 1000px){
+    .btn-primary,.btn-secondary {
+      min-width: 100px;
+      min-height: 38px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cover {
+      bottom: 15%;
+    }
+  
+    button.btn-primary {
+      min-width: 60px;
+      min-height: 37px;
+    }
+  }
+}
+
+@media (max-height: 600px){
+
+  h5.masthead-brand {
+    padding-top: 5px;
+  }
+
+  h3{font-size: 20px;}
+  h5{font-size: 15px;}
+  p{
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .btn{font-size: 10px;}
+  a{font-size: 10px;}
+  .btn-primary,.btn-secondary{
+    padding: 5px;
+  }
+  .cover {
+    bottom: 5%;
+  }
+  .prevImg,.nextImg{
+    height: 60px;
+    width: 30px;
+  }
+  .nav{
+    position: absolute;
+    top:60px;
+    right: 20px;
+  }
+  @media (min-width: 600px) {
+    .nav{top: 20px;}
+  }
+  
+  .btn-primary,.btn-secondary {
+    min-width: 70px;
+    min-height: 27px;
+  }
+
+
+  @media (max-width: 600px) {
+    .cover {
+      bottom: 10%;
+    }
+
+    button.btn-primary {
+      min-width: 60px;
+      min-height: 27px;
+    }
+  }
+}
+
+@media (max-width: 700px){
+  h5.masthead-brand {
+    padding-top: 5px;
+  }
+
+  h3{font-size: 20px;}
+  h5{font-size: 15px;}
+  p{
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .btn{font-size: 10px;}
+  a{font-size: 10px;}
+  .btn-primary,.btn-secondary{
+    padding: 5px;
+  }
+  .cover {
+    bottom: 5%;
+  }
+  .prevImg,.nextImg{
+    height: 60px;
+    width: 30px;
+  }
+  .nav{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+  }
+  @media (min-width: 600px) {
+    .nav{top: 20px;}
+  }
+  
+  .btn-primary,.btn-secondary {
+    min-width: 70px;
+    min-height: 27px;
+  }
+
+
+  @media (max-width: 600px) {
+    .cover {
+      bottom: 10%;
+    }
+
+    button.btn-primary {
+      min-width: 60px;
+      min-height: 27px;
+    }
+  }
+}
+
+@media (max-width: 364px){
+  .nav{
+    position: absolute;
+    top:80px;
+  }
 }
